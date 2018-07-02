@@ -1,0 +1,23 @@
+<label class="select-location">
+    <span>LOCATIONS</span>
+    <mat-form-field class="select-location-input">
+        <mat-select placeholder="Select From List :" [(ngModel)]="Location" name="locations">
+            <mat-option *ngFor="let Location of Locations" [value]="Location.viewValue">
+                {{Location.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</label>
+
+
+<label class="select-location">
+    <!-- <span>LOCATIONS</span> -->
+    <mat-form-field class="select-location-input">
+      <mat-select placeholder="Select From List :" formControlName="location" required>
+        <!-- [(ngModel)]="Location" name="locations"> -->
+        <mat-option *ngFor="let Location of Locations" [value]="Location.viewValue">
+          {{Location.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </label>

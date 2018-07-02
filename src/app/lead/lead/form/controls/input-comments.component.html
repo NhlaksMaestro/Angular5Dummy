@@ -1,0 +1,19 @@
+<label class="comments">
+        <span>Comments</span>
+        <mat-form-field class="comments-input">
+                <textarea matInput
+                [ngModel]="Comments" 
+                (ngModelChange)="change($event)"
+                 matTextareaAutosize matAutosizeMinRows="2" 
+                 matAutosizeMaxRows="5"></textarea>
+        </mat-form-field>
+</label>
+
+
+<label class="comments">
+        <!--<span>Email</span> -->
+        <mat-form-field>
+          <input matInput placeholder="Enter comments" formControlName="comments" required>
+          <mat-error *ngIf="comments.invalid">{{getErrorMessage('comments')}}</mat-error>
+        </mat-form-field>
+      </label>

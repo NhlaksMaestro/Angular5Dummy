@@ -1,0 +1,33 @@
+<label class="contact-number">
+    <span>Contact Number</span>
+    <mat-form-field class="contact-number-input">
+        <input matInput
+        [ngModel]="ContactNumber" 
+        (ngModelChange)="change($event)">
+    </mat-form-field>
+</label>
+
+<!-- <label class="product">
+    <!<span>Email</span> 
+    <mat-form-field>
+      <input matInput placeholder="Enter your company product" formControlName="product" required>
+      <mat-error *ngIf="product.invalid">{{getErrorMessage('product')}}</mat-error>
+    </mat-form-field>
+  </label> -->
+
+<label class="contact-number">
+    <!--<span>Email</span> -->
+    <mat-form-field>
+      <input matInput placeholder="Enter contact number" formControlName="contactNumber" required>
+      <mat-error *ngIf="contactNumber.invalid">{{getErrorMessage('contactNumber')}}</mat-error>
+    </mat-form-field>
+  </label>
+
+
+  <!-- <label class="mobile-number">
+    <span>Email</span> 
+    <mat-form-field>
+      <input matInput placeholder="Enter no of members" formControlName="noOFMembers" required>
+      <mat-error *ngIf="noOFMembers.invalid">{{getErrorMessage('noOFMembers')}}</mat-error>
+    </mat-form-field>
+  </label> -->

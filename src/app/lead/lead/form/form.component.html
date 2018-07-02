@@ -1,0 +1,193 @@
+<select-client-type [(selectedClientType)]="lead.ClientType" (ClientTypeOnChange)="ClientTypeChangedHandler($event)"></select-client-type>
+
+<!-- lead.ClientType: {{lead.ClientType}}-->
+<!-- <form novalidate (ngSubmit)="onSubmit(lead)" [formGroup]="leadForm" *ngIf="lead.ClientType.length>0" [ngSwitch]="lead.ClientType">
+  <div *ngSwitchCase="'Company'">
+      <div class="quotation-number">
+      <span>Quotation Number</span>
+      <mat-form-field class="quotation-number-input">
+          <input matInput placeholder="Enter your quote number" [formControlName]="quoteNumber" name="quoteNumber" required>
+          <mat-error *ngIf="quoteNumber.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+  </div> -->
+<!-- <input-quotation-number [LeadFormGroup]="leadForm" 
+    [QuoteNumberValue]="lead.QuoteNumber"></input-quotation-number> -->
+<!--[(QuoteNumber)]="QouteNumberChangedHandler($event)" <input-quotation-date [(QuoteDate)]="lead.QuoteDate"></input-quotation-date> -->
+<!-- </div>
+  <div *ngSwitchCase="'Individual'"> -->
+<!-- <input-landline [(Landline)]="lead.Landline"></input-landline> -->
+<!-- </div>
+  <div *ngSwitchCase="'Church'"> -->
+<!-- <input-member-name [(MemberName)]="lead.MemberName"></iaanput-member-name>
+    <input-member-number [(MemberNumber)]="lead.MemberNumber"></input-member-number> -->
+<!-- </div> -->
+<!-- <input-contact-number [(ContactNumber)]="lead.ContactNumber"></input-contact-number>
+  <input-email [(Email)]="lead.Email"></input-email>
+  <select-location [(Location)]="lead.Location"></select-location>
+  <input-comments [(Comments)]="lead.Comments"></input-comments> -->
+<!-- <div>
+    <button mat-raised-button color="primary" (click)="GenerateQuote($event)">Generate Quote</button>
+    <button mat-raised-button (click)="Clear($event)">Clear</button>
+  </div> -->
+<!-- <div>
+    <button mat-raised-button color="primary" type="submit" (click)="GenerateQuote(lead)">Generate Quote</button>
+    <button mat-raised-button (click)="Clear()">Clear</button>
+  </div> -->
+<!-- </form> -->
+
+<form novalidate (ngSubmit)="onSubmit(lead)" [formGroup]="leadForm" *ngIf="lead.ClientType.length>0" [ngSwitch]="lead.ClientType">
+  <div *ngSwitchCase="'Company'">
+
+  </div>
+
+  <div *ngSwitchCase="'Individual'">
+
+  </div>
+  <div *ngSwitchCase="'Church'">
+
+  </div>
+
+  <label class="contact-number">
+    <!--<span>Email</span> -->
+    <mat-form-field class="contact-number-input">
+      <input matInput placeholder="Enter contact number" formControlName="contactNumber" required>
+      <mat-error *ngIf="contactNumber.invalid">{{getErrorMessage('contactNumber')}}</mat-error>
+    </mat-form-field>
+  </label>
+  <label class="email">
+    <!--<span>Email</span> -->
+    <mat-form-field class="email-input">
+      <input matInput placeholder="Enter your email" formControlName="email" required>
+      <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </label>
+  <label class="landline">
+    <!--<span>Email</span> -->
+    <mat-form-field class="landline-input">
+      <input matInput placeholder="Enter landline number" formControlName="landline" required>
+      <mat-error *ngIf="landline.invalid">{{getLandlineErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </label>
+  <label class="member-name">
+    <!--<span>Email</span> -->
+    <mat-form-field class="member-name-input">
+      <input matInput placeholder="Enter members name" formControlName="memberName" required>
+      <mat-error *ngIf="memberName.invalid">{{getMemberNameErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </label>
+  <label class="member-number">
+    <span>Member Number</span>
+    <mat-form-field class="member-number-input">
+      <input matInput formControlName="memberNumber" placeholder="Enter member number">
+    </mat-form-field>
+    <mat-error *ngIf="memberNumber.invalid">{{getMemberNumberErrorMessage()}}</mat-error>
+  </label>
+  <label class="quotation-date">
+    <span>Quotation Date</span>
+    <mat-form-field class="quotation-date-input">
+      <input matInput [matDatepicker]="picker" placeholder="Choose a Quotation Date" formControlName="quoteDate" (ngModelChange)="change($event)">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+      <mat-error *ngIf="quoteDate.invalid">{{getQuoteDateErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </label>
+
+  <label class="quotation-number">
+    <span>Quotation Number</span>
+    <mat-form-field class="quotation-number-input">
+      <input matInput placeholder="Enter your quote number" formControlName="quoteNumber" required>
+      <mat-error *ngIf="quoteNumber.invalid">{{getQuoteNumberErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </label>
+  <label class="select-location">
+    <span>LOCATIONS</span>
+    <mat-form-field class="select-location-input">
+      <mat-select placeholder="Select From List :" formControlName="location" required>
+        <mat-option *ngFor="let Location of Locations" [value]="Location.viewValue">
+          {{Location.viewValue}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="premiumPerMember.invalid">{{getPremiumPerMemberErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </label>
+  <label class="comments">
+    <span>Comments</span>
+    <mat-form-field class="comments-input">
+      <textarea matInput formControlName="comments" placeholder="Comment...." matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5"></textarea>
+    </mat-form-field>
+  </label>
+  <div>
+    <button mat-raised-button color="primary" type="submit" (click)="GenerateQuote(lead)">Generate Quote</button>
+    <button mat-raised-button (click)="Clear()">Clear</button>
+  </div>
+</form>
+<!-- <label class="id-number">
+  <span>ID Number</span>  
+  <mat-form-field>
+    <input matInput placeholder="Enter your member name" [formControl]="idNumber" required>
+    <mat-error *ngIf="idNumber.invalid">{{getErrorMessage('idNumber')}}</mat-error>
+  </mat-form-field>
+</label> -->
+<!-- <label class="church">
+  <!<span>Email</span> 
+  <mat-form-field>
+    <input matInput placeholder="Enter your church name" formControlName="churchName" required>
+    <mat-error *ngIf="churchName.invalid">{{getErrorMessage('churchName')}}</mat-error>
+  </mat-form-field>
+</label> -->
+
+<!-- <label class="company-registration">
+  <span>Email</span> 
+  <mat-form-field>
+    <input matInput placeholder="Enter your company registration" formControlName="companyRegistration" required>
+    <mat-error *ngIf="companyRegistration.invalid">{{getErrorMessage('companyRegistration')}}</mat-error>
+  </mat-form-field>
+</label> -->
+<!-- <label class="quote-amount">
+  <!<span>Email</span>
+  <mat-form-field>
+    <input matInput placeholder="Enter quote amount" formControlName="quoteAmount" required>
+    <mat-error *ngIf="quoteAmount.invalid">{{getErrorMessage('quoteAmount')}}</mat-error>
+  </mat-form-field>
+</label> -->
+
+<!-- <label class="mobile-number">
+  <!<span>Email</span> 
+  <mat-form-field>
+    <input matInput placeholder="Enter your mobile number" formControlName="mobileNumber" required>
+    <mat-error *ngIf="mobileNumber.invalid">{{getErrorMessage('mobileNumber')}}</mat-error>
+  </mat-form-field>
+</label> -->
+
+<!-- <label class="no-of-employees">
+    <!<span>Email</span> -
+    <mat-form-field>
+      <input matInput placeholder="Enter number of employees" formControlName="noOfEmployees" required>
+      <mat-error *ngIf="noOfEmployees.invalid">{{getErrorMessage('noOfEmployees')}}</mat-error>
+    </mat-form-field>
+  </label> -->
+<!-- <label class="premium-per-member">
+  <!<span>Email</span>
+  <mat-form-field>
+    <input matInput placeholder="Enter premium per member" formControlName="premiumPerMember" required>
+    <mat-error *ngIf="premiumPerMember.invalid">{{getErrorMessage('premiumPerMember')}}</mat-error>
+  </mat-form-field>
+</label> -->
+
+<!--
+<label class="earnings-declared">
+  <!<span>Email</span>
+  <mat-form-field>
+    <input matInput placeholder="Enter earnings declared" formControlName="earningsDeclared" required>
+    <mat-error *ngIf="earningsDeclared.invalid">{{getErrorMessage('earningsDeclared')}}</mat-error>
+  </mat-form-field>
+</label> -->
+<!--
+
+<label class="premium-per-employee">
+  <!<span>Email</span> >
+  <mat-form-field>
+    <input matInput placeholder="Enter premium per employee" formControlName="premiumPerEmployee" required>
+    <mat-error *ngIf="premiumPerEmployee.invalid">{{getErrorMessage('premiumPerEmployee')}}</mat-error>
+  </mat-form-field>
+</label> -->

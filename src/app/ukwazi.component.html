@@ -1,0 +1,30 @@
+<ukwazi-header
+[expandHeader]="expandHeader"
+(headerClosed)="closeHeader($event)"></ukwazi-header>
+<!--(loginChanged)="loggedIn = $event"-->
+<ukwazi-left-side-bar 
+  [expandLeftSideBar]="expandLeftSideBar" 
+  (leftSideBarClosed)="leftSideBarClosed($event)">
+</ukwazi-left-side-bar>
+<!--(searchTermChanged)="searchTerm = $event"-->
+
+
+<section [class]="mainContentMargin">
+  <article>
+    <div [class]="headerButtonPosition" (click)="openHeader()">&#9776; open Header</div>
+    <div [class]="rightSideBarButtonPosition"  (click)="openRightSideBar()">&#9776; open right</div>
+    <div [class]="leftSidebarButtonPosition" (click)="openLeftSideBar()">&#9776; open left</div>
+    <div [class]="footerButtonPosition"  (click)="openFooter()">&#9776; open Footer</div>
+  </article>
+  <router-outlet>
+  </router-outlet>
+</section>
+<ukwazi-right-side-bar 
+  [expandRightSideBar]="expandRightSideBar"
+  (rightSideBarClosed)="rightSideBarClosed($event)">
+</ukwazi-right-side-bar>
+<!--[searchTerm]="searchTerm"-->
+
+<ukwazi-footer
+[expandFooter]="expandFooter"
+(footerClosed)="closeFooter($event)"></ukwazi-footer>

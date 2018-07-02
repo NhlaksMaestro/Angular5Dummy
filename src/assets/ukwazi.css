@@ -1,0 +1,7 @@
+.main-content {
+    transition: margin-left .5s;
+    padding: 16px;
+    min-height: 100%;
+    /* top: 64px; */
+    position: fixed;
+}

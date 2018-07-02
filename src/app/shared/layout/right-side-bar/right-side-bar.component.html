@@ -1,0 +1,26 @@
+<!-- <mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="side" opened="true" class="example-sidenav"
+                 [fixedInViewport]="true" [fixedTopGap]="30px"
+                 [fixedBottomGap]="30px">
+    </mat-sidenav>
+
+    mat-sidenav-content [formGroup]="options">
+      <p><mat-checkbox formControlName="fixed">Fixed</mat-checkbox></p>
+      <p><mat-form-field>
+        <input matInput type="number" formControlName="top" placeholder="Top gap">
+      </mat-form-field></p>
+      <p><mat-form-field>
+        <input matInput type="number" formControlName="bottom" placeholder="Bottom gap">
+      </mat-form-field></p>
+      <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
+    </mat-sidenav-content>
+  </mat-sidenav-container> -->
+  <aside class="right-sidebar" [class]="expandRightSideBar">
+      <div id="rightSideBar" >
+          <a href="javascript:void(0)" class="closebtn" (click)="closeRightSideBar()">&times;</a>
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Clients</a>
+          <a href="#">Contact</a>
+      </div>
+  </aside>

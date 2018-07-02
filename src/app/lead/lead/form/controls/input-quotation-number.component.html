@@ -1,0 +1,10 @@
+<div class="quotation-number" ><!--</div> [FormGroup]="LeadFormGroup">-->
+    <span>Quotation Number</span>
+    <!-- <mat-form-field class="quotation-number-input">
+        <input matInput [ngModel]="QuoteNumber" (ngModelChange)="change($event)">
+    </mat-form-field> -->
+    <mat-form-field class="quotation-number-input">
+        <input matInput placeholder="Enter your quote number"  name="quoteNumber" required>
+        <mat-error *ngIf="quoteNumber.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+</div>

@@ -1,0 +1,23 @@
+.footer{
+   position:fixed;
+   z-index: 2;
+   width:100%;
+   bottom:0;
+   transition: 0.5s;
+   height:64px;   /* Height of the footer */
+}
+.footer-closed{
+    z-index: 2;
+    transition: 0.5s;
+    position: fixed ;
+    height:0; 
+    bottom:0;
+    width:100%; 
+}
+.footer .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-right: 50px;
+}

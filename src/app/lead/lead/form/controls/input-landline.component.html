@@ -1,0 +1,21 @@
+<label class="landline">
+    <span>Landline</span>
+    <!-- <mat-form-field class="landline-input">
+        <input matInput
+        [ngModel]="Landline" 
+        (ngModelChange)="change($event)">
+    </mat-form-field> -->
+
+    <mat-form-field class="landline-input">
+        <input matInput placeholder="Enter landline number" formControlName="landline" required>
+        <mat-error *ngIf="landline.invalid">{{getErrorMessage('landline')}}</mat-error>
+      </mat-form-field>
+</label>
+
+<label class="landline">
+    <!--<span>Email</span> -->
+    <mat-form-field>
+      <input matInput placeholder="Enter landline number" formControlName="landline" required>
+      <mat-error *ngIf="landline.invalid">{{getErrorMessage('landline')}}</mat-error>
+    </mat-form-field>
+  </label>

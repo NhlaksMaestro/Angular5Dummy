@@ -1,0 +1,17 @@
+<label class="member-number">
+    <span>Member Number</span>
+    <mat-form-field class="member-number-input">
+        <input matInput 
+        [ngModel]="MemberNumber" 
+        (ngModelChange)="change($event)">
+    </mat-form-field>
+</label>
+
+
+<!-- <label class="member-number">
+    <!<span>Email</span> 
+    <mat-form-field>
+      <input matInput placeholder="Enter your company registration" formControlName="memberNumber" required>
+      <mat-error *ngIf="memberNumber.invalid">{{getErrorMessage('memberNumber')}}</mat-error>
+    </mat-form-field>
+  </label> -->

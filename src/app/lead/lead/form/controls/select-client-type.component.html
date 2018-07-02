@@ -1,0 +1,10 @@
+<div class="select-client-type">
+    <h4>CLIENT TYPE</h4>
+    <mat-form-field class="mat-dropdown">
+        <mat-select placeholder="Select From List :" [(ngModel)]="selectedClientType" (change)="onSelect(selectedClientType)" ><!--name="ClientTypes"-->
+            <mat-option *ngFor="let ClientType of ClientTypes" [value]="ClientType.viewValue" >
+                {{ClientType.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

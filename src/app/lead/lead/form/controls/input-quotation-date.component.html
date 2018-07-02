@@ -1,0 +1,23 @@
+<label class="quotation-date">
+    <span>Quotation Date</span>
+    <mat-form-field class="quotation-date-input">
+        <input matInput 
+        [matDatepicker]="picker" 
+        placeholder="Choose a Quotation Date" 
+        [ngModel]="QuoteDate" 
+        (ngModelChange)="change($event)">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+      </mat-form-field>
+</label>
+
+
+<!-- <label class="quote-date">
+    <!<span>Email</span> 
+    <mat-form-field class="quotation-date-input">
+      <input matInput [matDatepicker]="picker" placeholder="Choose a Quotation Date" formControlName="quoteDate" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+      <mat-error *ngIf="quoteDate.invalid">{{getErrorMessage('quoteDate')}}</mat-error>
+    </mat-form-field>
+  </label> -->

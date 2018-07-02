@@ -1,0 +1,21 @@
+<footer [class]="expandFooter">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Ufuna Ukwazi?</span>
+      <div>
+        <mat-menu #ProjectMenu="matMenu">
+          <button mat-menu-item> Settings </button>
+          <button mat-menu-item> Help </button>
+        </mat-menu>
+
+        <button mat-icon-button [matMenuTriggerFor]="ProjectMenu">
+          <mat-icon>whatshot</mat-icon>
+        </button>
+
+      </div>
+      <div>
+        <a href="javascript:void(0)" class="closebtn" (click)="closeFooter()">&times;</a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</footer>

@@ -1,0 +1,110 @@
+
+    body{
+        margin: 0;
+      }
+      .main-content {
+        transition: margin .5s;
+        padding: 16px;
+        min-height: 100%;
+        position: absolute;
+        cursor:pointer;
+    }
+    .main-content-top-expand {
+        transition: margin .5s;
+        padding: 16px;
+        min-height: 100%;
+        position: absolute;
+        cursor:pointer;
+        margin-top: 64px;
+    }
+    .main-content-bottom-expand {
+        transition: margin .5s;
+        padding: 16px;
+        min-height: 100%;
+        position: absolute;
+        cursor:pointer;
+        margin-bottom: 64px;
+    }
+    .main-content-left-side-expand {
+        transition: margin .5s;
+        padding: 16px;
+        min-height: 100%;
+        position: absolute;
+        cursor:pointer;
+        margin-left: 250px;
+    }
+    .main-content-right-side-expand {
+        transition: margin .5s;
+        padding: 16px;
+        min-height: 100%;
+        position: absolute;
+        cursor:pointer;
+        margin-right: 250px;
+    }
+    .left-sidebar-button{
+      transition:top .5s !important;
+      font-size:30px;
+      cursor:pointer;
+      position:fixed;
+      top:0;
+      left:0;
+      transition:top .5s !important;
+    }
+    .right-sidebar-button{
+      transition:top left .5s;
+      font-size:30px;
+      cursor:pointer;
+      position:fixed;
+      top:0;
+      right:0;
+      transition:top .5s !important;
+    }
+    .header-button{
+      transition:top .5s;
+      font-size:30px;
+      cursor:pointer;
+      position:fixed;
+      top:0;
+      width:5%;
+      left:0;
+      right:0;
+       margin-left:auto;
+       margin-right:auto;
+       margin-top:auto;
+        margin-bottom:auto;
+    }
+    .footer-button{
+      transition:bottom .5s;
+      font-size:30px;
+      cursor:pointer;
+      position:fixed;
+      left:25%;
+      right:25%;
+      bottom:0;
+      width:200px;
+      margin-left:auto;
+       margin-right:auto;
+        margin-top:auto;
+        margin-bottom:auto;
+    }
+    .header-button-expand{
+      transition:top .5s !important;
+      top:64px !important;
+      cursor:pointer;
+    }
+    .right-sidebar-button-expand{
+      transition:top .5s;
+      top:64px !important;
+      cursor:pointer;
+      right: 250px;
+    }
+    .left-sidebar-button-expand{
+      transition:left 3s !important;
+      cursor:pointer;
+      left: 250px;
+    }
+    .footer-button-expand{
+      transition:bottom .5s !important;
+      bottom:64px !important;
+      cursor:pointer;
+    }

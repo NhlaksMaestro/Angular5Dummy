@@ -1,0 +1,23 @@
+@import './controls/input-quotation-number.component';
+@import './controls/input-comments.component';
+@import './controls/input-contact-number.component';
+@import './controls/input-email.component';
+@import './controls/input-landline.component';
+@import './controls/input-quotation-number.component';
+@import './controls/input-quotation-number.component';
+@import './controls/input-quotation-number.component';
+@import './controls/input-quotation-number.component';
+@import './controls/input-quotation-number.component';
+@import './controls/input-member-name.component';
+@import './controls/input-member-number.component';
+@import './controls/input-quotation-date.component';
+@import './controls/select-location.component';
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    > * {
+        width: 100%;
+      }
+  }
+
